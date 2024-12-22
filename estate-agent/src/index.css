@@ -1,7 +1,5 @@
 body {
   font-family: "Roboto", serif;
-  margin: 0;
-  padding: 0;
 }
 
 :root {
@@ -12,13 +10,7 @@ body {
 }
 
 /* search bar */
-
-.searchBar .type button {
-  border: 1px solid var(--gary);
-  border-bottom: none;
+.form-align{
+  margin-left: 12px;
 }
 
-.searchBar .type .active {
-  background-color: var(--black);
-  color: var(--white);
-}
