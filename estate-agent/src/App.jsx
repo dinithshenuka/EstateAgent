@@ -13,7 +13,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/properties" element={<SearchPage />} />
+        <Route path="/search" element={<SearchPage />} />
         <Route path="/property/:id" element={<PropertyPage />} />
       </Routes>
       <Footer />
