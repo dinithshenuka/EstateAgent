@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { PropertyContext } from "../context/PropertyContext";
+import { Draggable } from "@hello-pangea/dnd";
 
 const FavoritesList = () => {
   const { favorites, removeFromFavorites, clearFavorites } =
@@ -22,31 +23,45 @@ const FavoritesList = () => {
         {favorites.length === 0 ? (
           <p className="text-muted">No favorites yet</p>
         ) : (
-          favorites.map((property) => (
-            <div
+          favorites.map((property, index) => (
+            <Draggable
               key={property.id}
-              className="d-flex align-items-center mb-2 p-2 border-bottom"
+              draggableId={property.id}
+              index={index}
             >
-              <img
-                src={property.picture}
-                alt={property.name}
-                className="me-2 rounded"
-                style={{ width: "50px", height: "50px", objectFit: "cover" }}
-              />
-              <div className="flex-grow-1">
-                <small className="fw-bold">{property.name}</small>
-                <br />
-                <small className="text-muted">
-                  {property.currency} {property.price.toLocaleString()}
-                </small>
-              </div>
-              <button
-                className="btn btn-sm btn-outline-danger"
-                onClick={() => removeFromFavorites(property.id)}
-              >
-                <i className="fas fa-times"></i>
-              </button>
-            </div>
+              {(provided) => (
+                <div
+                  ref={provided.innerRef}
+                  {...provided.draggableProps}
+                  {...provided.dragHandleProps}
+                  className="d-flex align-items-center mb-2 p-2 border-bottom"
+                >
+                  <img
+                    src={property.picture}
+                    alt={property.name}
+                    className="me-2 rounded"
+                    style={{
+                      width: "50px",
+                      height: "50px",
+                      objectFit: "cover",
+                    }}
+                  />
+                  <div className="flex-grow-1">
+                    <small className="fw-bold">{property.name}</small>
+                    <br />
+                    <small className="text-muted">
+                      {property.currency} {property.price.toLocaleString()}
+                    </small>
+                  </div>
+                  <button
+                    className="btn btn-sm btn-outline-danger"
+                    onClick={() => removeFromFavorites(property.id)}
+                  >
+                    <i className="fas fa-times"></i>
+                  </button>
+                </div>
+              )}
+            </Draggable>
           ))
         )}
       </div>
