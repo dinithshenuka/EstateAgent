@@ -1,17 +1,40 @@
-import React, { createContext } from "react";
+import React, { createContext, useState, useEffect } from "react";
 import propertiesData from "../data/properties.json";
 
-// Create context
 export const PropertyContext = createContext();
 
-// Create provider
 export const PropertyProvider = ({ children }) => {
-  // Properties from JSON
-  const properties = propertiesData.properties;
+  const [properties] = useState(propertiesData.properties);
+  const [favorites, setFavorites] = useState(() => {
+    const savedFavorites = localStorage.getItem("favorites");
+    return savedFavorites ? JSON.parse(savedFavorites) : [];
+  });
 
-  // Values to provide
+  // Save favorites to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+  }, [favorites]);
+
+  const addToFavorites = (property) => {
+    if (!favorites.find((fav) => fav.id === property.id)) {
+      setFavorites([...favorites, property]);
+    }
+  };
+
+  const removeFromFavorites = (propertyId) => {
+    setFavorites(favorites.filter((fav) => fav.id !== propertyId));
+  };
+
+  const clearFavorites = () => {
+    setFavorites([]);
+  };
+
   const value = {
     properties,
+    favorites,
+    addToFavorites,
+    removeFromFavorites,
+    clearFavorites,
   };
 
   return (
