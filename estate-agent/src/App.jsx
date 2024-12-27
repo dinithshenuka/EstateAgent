@@ -6,18 +6,21 @@ import HomePage from "./routes/HomePage";
 import SearchPage from "./routes/SearchPage";
 import PropertyPage from "./routes/PropertyPage";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import PropertyProvider from "./context/PropertyContext";
 
 function App() {
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/search" element={<SearchPage />} />
-        <Route path="/property/:id" element={<PropertyPage />} />
-      </Routes>
-      <Footer />
-    </Router>
+    <PropertyProvider>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/search" element={<SearchPage />} />
+          <Route path="/property/:id" element={<PropertyPage />} />
+        </Routes>
+        <Footer />
+      </Router>
+    </PropertyProvider>
   );
 }
 
