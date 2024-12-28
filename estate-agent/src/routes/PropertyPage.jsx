@@ -26,14 +26,14 @@ const PropertyPage = () => {
 
   const mapContainerStyle = {
     width: "100%",
-    height: "400px",
+    height: "clamp(300px, 50vw, 400px)",
     borderRadius: "8px",
   };
 
   const galleryImages = property.gallery.map((img) => ({
     original: img,
     thumbnail: img,
-    originalHeight: 500,
+    originalHeight: "auto",
   }));
 
   const propertyLocation = {
@@ -44,8 +44,8 @@ const PropertyPage = () => {
   return (
     <div className="container py-4">
       {/* Image Gallery Section */}
-      <div className="row mb-4">
-        <div className="col-md-8">
+      <div className="row g-4">
+        <div className="col-12 col-lg-8">
           <ImageGallery
             items={galleryImages}
             showPlayButton={false}
@@ -55,17 +55,17 @@ const PropertyPage = () => {
             autoPlay={false}
           />
         </div>
-        <div className="col-md-4">
-          <div className="mt-4">
-            <h3>{property.name}</h3>
-            <p className="h4 text-warning">
+        <div className="col-12 col-lg-4">
+          <div className="text-center text-lg-start">
+            <h3 className="fs-4 fs-lg-3 mb-3">{property.name}</h3>
+            <p className="h4 text-warning mb-3">
               {property.currency} {property.price.toLocaleString()}
             </p>
-            <p>
+            <p className="mb-2">
               <strong>Location:</strong> {property.location} (
               {property.postalCode})
             </p>
-            <p>
+            <p className="mb-3">
               <strong>Type:</strong> {property.type} • {property.bedrooms}{" "}
               bedrooms
             </p>
@@ -81,32 +81,32 @@ const PropertyPage = () => {
       </div>
 
       {/* Tabbed Content */}
-      <div className="row">
+      <div className="row mt-5">
         <div className="col-12">
           <Tabs>
-            <TabList className="nav nav-tabs mb-4">
+            <TabList className="nav nav-tabs mb-4 flex-nowrap overflow-auto">
               <Tab className="nav-item">
-                <button className="nav-link">Description</button>
+                <button className="nav-link px-4">Description</button>
               </Tab>
               <Tab className="nav-item">
-                <button className="nav-link">Floor Plan</button>
+                <button className="nav-link px-4">Floor Plan</button>
               </Tab>
               <Tab className="nav-item">
-                <button className="nav-link">Location</button>
+                <button className="nav-link px-4">Location</button>
               </Tab>
             </TabList>
 
             <TabPanel>
-              <div className="p-4 bg-light rounded">
+              <div className="p-3 p-lg-4 bg-light rounded">
                 <p className="mb-0">{property.description}</p>
               </div>
             </TabPanel>
 
             <TabPanel>
-              <div className="p-4 bg-light rounded">
-                <div className="row">
+              <div className="p-3 p-lg-4 bg-light rounded">
+                <div className="row g-4">
                   {property.flloorPlan?.map((plan, index) => (
-                    <div key={index} className="col-md-6 mb-4">
+                    <div key={index} className="col-12 col-md-6">
                       <img
                         src={plan}
                         alt={`Floor plan ${index + 1}`}
@@ -119,9 +119,9 @@ const PropertyPage = () => {
             </TabPanel>
 
             <TabPanel>
-              <div className="p-4 bg-light rounded">
+              <div className="p-3 p-lg-4 bg-light rounded">
                 {!isLoaded ? (
-                  <div className="text-center">Loading map...</div>
+                  <div className="text-center py-4">Loading map...</div>
                 ) : (
                   <GoogleMap
                     mapContainerStyle={mapContainerStyle}
