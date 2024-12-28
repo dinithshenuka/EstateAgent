@@ -1,12 +1,13 @@
-// src/routes/PropertyPage.jsx
 import React, { useContext, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
 import { PropertyContext } from "../context/PropertyContext";
 import { GoogleMap, useLoadScript, MarkerF } from "@react-google-maps/api";
-import { Draggable } from "@hello-pangea/dnd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import ImageGallery from "react-image-gallery";
+import "react-image-gallery/styles/css/image-gallery.css";
 
 const PropertyPage = () => {
   const { id } = useParams();
@@ -29,38 +30,32 @@ const PropertyPage = () => {
     borderRadius: "8px",
   };
 
+  const galleryImages = property.gallery.map((img) => ({
+    original: img,
+    thumbnail: img,
+    originalHeight: 500,
+  }));
+
+  const defaultLocation = {
+    lat: 6.9271,
+    lng: 79.8612,
+  };
+
   return (
     <div className="container py-4">
       {/* Image Gallery Section */}
       <div className="row mb-4">
         <div className="col-md-8">
-          <img
-            src={property.gallery[mainImage]}
-            alt={property.name}
-            className="img-fluid rounded shadow"
-            style={{ width: "100%", height: "500px", objectFit: "cover" }}
+          <ImageGallery
+            items={galleryImages}
+            showPlayButton={false}
+            showFullscreenButton={true}
+            showNav={true}
+            thumbnailPosition="bottom"
+            autoPlay={false}
           />
         </div>
         <div className="col-md-4">
-          <div className="d-flex flex-wrap gap-2 justify-content-center">
-            {property.gallery.map((img, index) => (
-              <img
-                key={index}
-                src={img}
-                alt={`Thumbnail ${index + 1}`}
-                className={`thumbnail rounded cursor-pointer ${
-                  mainImage === index ? "border border-warning" : ""
-                }`}
-                style={{
-                  width: "100px",
-                  height: "100px",
-                  objectFit: "cover",
-                  cursor: "pointer",
-                }}
-                onClick={() => setMainImage(index)}
-              />
-            ))}
-          </div>
           <div className="mt-4">
             <h3>{property.name}</h3>
             <p className="h4 text-warning">
@@ -109,14 +104,17 @@ const PropertyPage = () => {
 
             <TabPanel>
               <div className="p-4 bg-light rounded">
-                {property.flloorPlan?.map((plan, index) => (
-                  <img
-                    key={index}
-                    src={plan}
-                    alt={`Floor plan ${index + 1}`}
-                    className="img-fluid"
-                  />
-                ))}
+                <div className="row">
+                  {property.flloorPlan?.map((plan, index) => (
+                    <div key={index} className="col-md-6 mb-4">
+                      <img
+                        src={plan}
+                        alt={`Floor plan ${index + 1}`}
+                        className="img-fluid rounded shadow"
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
             </TabPanel>
 
@@ -127,18 +125,10 @@ const PropertyPage = () => {
                 ) : (
                   <GoogleMap
                     mapContainerStyle={mapContainerStyle}
-                    center={{
-                      lat: 51.5074,
-                      lng: -0.1278,
-                    }}
+                    center={defaultLocation}
                     zoom={13}
                   >
-                    <MarkerF
-                      position={{
-                        lat: 51.5074,
-                        lng: -0.1278,
-                      }}
-                    />
+                    <MarkerF position={defaultLocation} />
                   </GoogleMap>
                 )}
               </div>
