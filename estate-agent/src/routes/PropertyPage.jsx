@@ -1,14 +1,16 @@
+// src/routes/PropertyPage.jsx
 import React, { useContext, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import "react-tabs/style/react-tabs.css";
 import { PropertyContext } from "../context/PropertyContext";
-import { useLoadScript, GoogleMap } from "@react-google-maps/api";
-import { AdvancedMarkerElement } from "@googlemaps/markerclusterer";
+import { GoogleMap, useLoadScript, MarkerF } from "@react-google-maps/api";
+import { Draggable } from "@hello-pangea/dnd";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 const PropertyPage = () => {
   const { id } = useParams();
-  const { properties } = useContext(PropertyContext);
+  const { properties, addToFavorites } = useContext(PropertyContext);
   const [mainImage, setMainImage] = useState(0);
 
   const { isLoaded } = useLoadScript({
@@ -24,93 +26,95 @@ const PropertyPage = () => {
   const mapContainerStyle = {
     width: "100%",
     height: "400px",
-  };
-
-  const center = {
-    lat: 7.8731,
-    lng: 80.7718,
+    borderRadius: "8px",
   };
 
   return (
-    <div className="container mt-4">
-      <div className="row">
-        {/* Image Gallery */}
-        <div className="col-md-8 mb-4">
+    <div className="container py-4">
+      {/* Image Gallery Section */}
+      <div className="row mb-4">
+        <div className="col-md-8">
           <img
             src={property.gallery[mainImage]}
             alt={property.name}
-            className="img-fluid rounded shadow-sm"
+            className="img-fluid rounded shadow"
+            style={{ width: "100%", height: "500px", objectFit: "cover" }}
           />
-          <div className="row mt-3 g-2">
+        </div>
+        <div className="col-md-4">
+          <div className="d-flex flex-wrap gap-2 justify-content-center">
             {property.gallery.map((img, index) => (
-              <div key={index} className="col-2">
-                <img
-                  src={img}
-                  alt={`${property.name} view ${index + 1}`}
-                  className={`img-fluid rounded ${
-                    mainImage === index ? "border border-warning" : "border"
-                  }`}
-                  onClick={() => setMainImage(index)}
-                  style={{ cursor: "pointer" }}
-                />
-              </div>
+              <img
+                key={index}
+                src={img}
+                alt={`Thumbnail ${index + 1}`}
+                className={`thumbnail rounded cursor-pointer ${
+                  mainImage === index ? "border border-warning" : ""
+                }`}
+                style={{
+                  width: "100px",
+                  height: "100px",
+                  objectFit: "cover",
+                  cursor: "pointer",
+                }}
+                onClick={() => setMainImage(index)}
+              />
             ))}
           </div>
-        </div>
-
-        {/* Property Details */}
-        <div className="col-md-4">
-          <div className="card">
-            <div className="card-body">
-              <h2 className="card-title">{property.name}</h2>
-              <p className="h3 text-warning mb-3">
-                {property.currency} {property.price.toLocaleString()}
-              </p>
-              <hr />
-              <div className="mb-2">
-                <strong>Type:</strong> {property.type}
-              </div>
-              <div className="mb-2">
-                <strong>Bedrooms:</strong> {property.bedrooms}
-              </div>
-              <div className="mb-2">
-                <strong>Location:</strong> {property.location}
-              </div>
-              <div className="mb-2">
-                <strong>Postal Code:</strong> {property.postalCode}
-              </div>
-              <div className="mb-2">
-                <strong>Tenure:</strong> {property.tenure}
-              </div>
-            </div>
+          <div className="mt-4">
+            <h3>{property.name}</h3>
+            <p className="h4 text-warning">
+              {property.currency} {property.price.toLocaleString()}
+            </p>
+            <p>
+              <strong>Location:</strong> {property.location} (
+              {property.postalCode})
+            </p>
+            <p>
+              <strong>Type:</strong> {property.type} • {property.bedrooms}{" "}
+              bedrooms
+            </p>
+            <button
+              className="btn btn-warning w-100"
+              onClick={() => addToFavorites(property)}
+            >
+              <FontAwesomeIcon icon={faHeart} className="me-2" />
+              Add to Favorites
+            </button>
           </div>
         </div>
       </div>
 
       {/* Tabbed Content */}
-      <div className="row mt-4">
+      <div className="row">
         <div className="col-12">
           <Tabs>
-            <TabList>
-              <Tab>Description</Tab>
-              <Tab>Floor Plan</Tab>
-              <Tab>Location</Tab>
+            <TabList className="nav nav-tabs mb-4">
+              <Tab className="nav-item">
+                <button className="nav-link">Description</button>
+              </Tab>
+              <Tab className="nav-item">
+                <button className="nav-link">Floor Plan</button>
+              </Tab>
+              <Tab className="nav-item">
+                <button className="nav-link">Location</button>
+              </Tab>
             </TabList>
 
             <TabPanel>
               <div className="p-4 bg-light rounded">
-                <p>{property.description}</p>
+                <p className="mb-0">{property.description}</p>
               </div>
             </TabPanel>
 
             <TabPanel>
               <div className="p-4 bg-light rounded">
-                {property.flloorPlan.map((plan, index) => (
+                {property.flloorPlan?.map((plan, index) => (
                   <img
                     key={index}
                     src={plan}
                     alt={`Floor plan ${index + 1}`}
-                    className="img-fluid mb-3"
+                    className="img-fluid"
                   />
                 ))}
               </div>
@@ -119,16 +123,21 @@ const PropertyPage = () => {
             <TabPanel>
               <div className="p-4 bg-light rounded">
                 {!isLoaded ? (
-                  <div>Loading map...</div>
+                  <div className="text-center">Loading map...</div>
                 ) : (
                   <GoogleMap
                     mapContainerStyle={mapContainerStyle}
-                    center={center}
+                    center={{
+                      lat: 51.5074,
+                      lng: -0.1278,
+                    }}
                     zoom={13}
                   >
-                    <AdvancedMarkerElement
-                      position={center}
-                      title={property.name}
+                    <MarkerF
+                      position={{
+                        lat: 51.5074,
+                        lng: -0.1278,
+                      }}
                     />
                   </GoogleMap>
                 )}
