@@ -36,9 +36,9 @@ const PropertyPage = () => {
     originalHeight: 500,
   }));
 
-  const defaultLocation = {
-    lat: 6.9271,
-    lng: 79.8612,
+  const propertyLocation = {
+    lat: property.coordinates.lat,
+    lng: property.coordinates.lng,
   };
 
   return (
@@ -125,10 +125,10 @@ const PropertyPage = () => {
                 ) : (
                   <GoogleMap
                     mapContainerStyle={mapContainerStyle}
-                    center={defaultLocation}
-                    zoom={13}
+                    center={propertyLocation}
+                    zoom={15}
                   >
-                    <MarkerF position={defaultLocation} />
+                    <MarkerF position={propertyLocation} />
                   </GoogleMap>
                 )}
               </div>

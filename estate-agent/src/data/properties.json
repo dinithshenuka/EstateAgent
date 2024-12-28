@@ -10,6 +10,10 @@
       "tenure": "Freehold",
       "description": "Prime Group strengthens the portfolio with the latest luxury housing project in Chandrika Kumarathunga Mawatha, Malabe. Waterfall Residencies; located 200m to Nevil Fernando Hospital, 1km to 177 Bus Road, 1km to SLIIT and 1.5km to 143 Bus Road, close to Kothalawala & Waliwita highway entrances bringing the convenience of urban living at its best. Waterfall Residencies, Malabe consist of three different types of 2 story 3 bedroom housing units and size ranging from 1550sqft to 1707sqft. It's a place where you can truly enjoy the scenic beauty of nature and lead an exclusive & elegant life. Waterfall Residencies, Malabe is developed by Prime Group, the best developer in Sri Lanka and the only Real Estate group in Sri Lanka with Credit Rating of [SL] A- (Stable) by ICRA Lanka.",
       "location": "Malabe, Sri Lanka",
+      "coordinates": {
+        "lat": 6.9061,
+        "lng": 79.9696
+      },
       "postalCode": "10115",
       "picture": "/images/h1/h1p1.png",
       "gallery": [
@@ -35,6 +39,10 @@
       "tenure": "Freehold",
       "description": "Scottish Island - Digana, an incomparable experience brought to you by Prime Group, The Best Developer in Sri Lanka. Explore the utmost comfort & luxuriousness of Prime Luxury Water Villas and enjoy the unmatched excitement of having the Victoria reservoir and an astonishing mountain range as your view point from your own Villa. Life made easier for you at Scottish Island - Digana with the amazing facilities and amenities including,",
       "location": "Kandy, Sri Lanka",
+      "coordinates": {
+        "lat": 7.2946,
+        "lng": 80.7333
+      },
       "postalCode": "20400",
       "picture": "/images/h2/h2p1.png",
       "gallery": [
@@ -64,6 +72,10 @@
       "tenure": "Freehold",
       "description": "The Palace A peerless apartment which located in the heart of Gampaha, just 100m from the Kandy road offering a unique blend of luxury living and serene natural allure. Spread across a sprawling area, this project aims to provide an exclusive lifestyle to its residents while preserving the unparalleled natural setting. At a place you don't need to worry about the security, each residence is meticulously finished with, boasting charming and pristine interiors.",
       "location": "Gampaha, Sri Lanka",
+      "coordinates": {
+        "lat": 7.0924,
+        "lng": 80.0083
+      },
       "postalCode": "11000",
       "picture": "/images/f1/f1p1.png",
       "gallery": [
@@ -91,6 +103,10 @@
       "tenure": "Freehold",
       "description": "88 Residence Kahathuduwa While the stunning views and uninterrupted greenery of the scenic locations seeps into every corner and makes the atmosphere come alive, the thoughtful aesthetics make sure you truly enjoy your stay at your dream home. Also, the major transportation hubs invite you to embark the vibrant lifestyle while being away from the hustle of the bustling city. 88 Residence in Kahathuduwa allow you to sink into most delightful moments, while its enchanting vistas that surround you create the most mesmerising feelings at your own home.",
       "location": "Kahathuduwa, Sri Lanka",
+      "coordinates": {
+        "lat": 6.7859,
+        "lng": 79.9626
+      },
       "postalCode": "10300",
       "picture": "/images/h3/h3p1.png",
       "gallery": [
@@ -118,6 +134,10 @@
       "tenure": "Freehold",
       "description": "The Haven - Kandy, a luxurious apartment complex located in the heart of Kandy, just 1.5km from the Kandy city center. The Haven offers a unique blend of luxury living and serene natural allure. Spread across a sprawling area, this project aims to provide an exclusive lifestyle to its residents while preserving the unparalleled natural setting. At a place you don't need to worry about the security, each residence is meticulously finished with, boasting charming and pristine interiors.",
       "location": "Kandy, Sri Lanka",
+      "coordinates": {
+        "lat": 7.2906,
+        "lng": 80.6337
+      },
       "postalCode": "20000",
       "picture": "/images/f2/f2p1.png",
       "gallery": [
@@ -149,6 +169,10 @@
       "tenure": "Freehold",
       "description": "Another Signature Villas project from the Best Developer in Sri Lanka from the Most Exclusive Neighborhood in Thalawathugoda. 4 Bedroom Villas Varying from 3326 SQFT 3728 SQFT from Corea Gardens, Thalawathugoda. A Variety of 04 Houses for you to Select With Amazing Features & Common Facilities including,",
       "location": "Thalawathugoda, Sri Lanka",
+      "coordinates": {
+        "lat": 6.8747,
+        "lng": 79.9482
+      },
       "postalCode": "10116",
       "picture": "/images/f3/f3p1.png",
       "gallery": [
@@ -176,6 +200,10 @@
       "tenure": "Freehold",
       "description": "Are you searching for your dream home where comfort, luxury, and serenity meet? Live the life you've always dreamt of at Prime Villas Dalugama, in a community which is shaped by luxury, comfort, and convenience. Symbolizing a new era of community, Prime Group proudly handed over the keys to cherished homeowners. There are more units available for your family or for a smart investment opportunity. Prime Villas - Dalugama consists of three different types of 3-bedroom individual Villas and sizes ranging from 1,876 to 2,199 sq. ft.",
       "location": "Dalugama, Sri Lanka",
+      "coordinates": {
+        "lat": 6.9781,
+        "lng": 79.9126
+      },
       "postalCode": "11204",
       "picture": "/images/h4/h4p1.png",
       "gallery": [
@@ -203,6 +231,10 @@
       "tenure": "Freehold",
       "description": "A place where everything becomes easy in your Life. The latest housing project by Prime Group, The Best Developer in Sri Lanka. Prime Life, Kadawatha brings luxury to your life and provides utmost convenience to all your daily needs by providing close proximity to almost every facility.",
       "location": "Kadawatha, Sri Lanka",
+      "coordinates": {
+        "lat": 7.0081,
+        "lng": 79.9547
+      },
       "postalCode": "11850",
       "picture": "/images/h5/h5p1.png",
       "gallery": [
