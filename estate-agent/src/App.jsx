@@ -7,6 +7,7 @@ import SearchPage from "./routes/SearchPage";
 import PropertyPage from "./routes/PropertyPage";
 import FavoritesPage from "./routes/FavoritesPage";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import "react-datepicker/dist/react-datepicker.css";
 import PropertyProvider from "./context/PropertyContext";
 import AboutPage from "./routes/AboutPage";
 import ContactPage from "./routes/ContactPage";

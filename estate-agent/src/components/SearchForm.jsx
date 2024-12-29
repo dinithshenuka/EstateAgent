@@ -95,7 +95,7 @@ const SearchForm = ({ filters, setFilters, onSearch }) => {
                 onChange={(date) => setFilters({ ...filters, dateAfter: date })}
                 className="form-control"
                 placeholderText="After"
-                dateFormat="MM/dd/yyyy"
+                dateFormat="dd/MM/yyyy"
                 isClearable
               />
               <DatePicker
@@ -105,7 +105,7 @@ const SearchForm = ({ filters, setFilters, onSearch }) => {
                 }
                 className="form-control"
                 placeholderText="Before"
-                dateFormat="MM/dd/yyyy"
+                dateFormat="dd/MM/yyyy"
                 isClearable
               />
             </div>

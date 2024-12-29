@@ -18,7 +18,6 @@ const ContactPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
     console.log("Form submitted:", formData);
   };
 
@@ -62,7 +61,7 @@ const ContactPage = () => {
                 />
                 <div>
                   <h5 className="h6">Phone</h5>
-                  <p className="text-muted mb-0">(555) 123-4567</p>
+                  <p className="text-muted mb-0">(033) 123-4567</p>
                 </div>
               </div>
 

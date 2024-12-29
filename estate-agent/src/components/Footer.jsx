@@ -92,7 +92,7 @@ function Footer() {
               </p>
               <p>
                 <FontAwesomeIcon icon={faPhone} className="me-2" />
-                (555) 123-4567
+                (033) 123-4567
               </p>
               <p>
                 <FontAwesomeIcon icon={faClock} className="me-2" />
