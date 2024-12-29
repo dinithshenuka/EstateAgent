@@ -3,134 +3,138 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebookF,
   faTwitter,
-  faGoogle,
   faInstagram,
   faLinkedin,
-  faGithub,
 } from "@fortawesome/free-brands-svg-icons";
 import {
   faHome,
   faEnvelope,
   faPhone,
-  faPrint,
+  faClock,
 } from "@fortawesome/free-solid-svg-icons";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 function Footer() {
   return (
-    <div className="my-5">
-      <footer className="text-center text-lg-start text-dark bg-light">
-        <section className="d-flex justify-content-between p-4 text-white bg-dark">
-          <div className="me-5">
-            <span>Get connected with us on social networks:</span>
+    <footer className="navbar-light bg-light mt-5 py-4">
+      <div className="container">
+        <div className="row gy-4">
+          <div className="col-lg-3 col-md-6">
+            <div className="navbar-brand mb-3">Estate Agent</div>
+            <p className="text-muted">
+              Your trusted partner in finding the perfect property. We help
+              connect buyers with their dream homes and sellers with qualified
+              prospects.
+            </p>
           </div>
 
-          <div>
-            <a href="" className="text-white me-4">
-              <FontAwesomeIcon icon={faFacebookF} />
-            </a>
-            <a href="" className="text-white me-4">
-              <FontAwesomeIcon icon={faTwitter} />
-            </a>
-            <a href="" className="text-white me-4">
-              <FontAwesomeIcon icon={faGoogle} />
-            </a>
-            <a href="" className="text-white me-4">
-              <FontAwesomeIcon icon={faInstagram} />
-            </a>
-            <a href="" className="text-white me-4">
-              <FontAwesomeIcon icon={faLinkedin} />
-            </a>
-            <a href="" className="text-white me-4">
-              <FontAwesomeIcon icon={faGithub} />
-            </a>
+          <div className="col-lg-3 col-md-6">
+            <h6 className="nav-link mb-3">Property Types</h6>
+            <ul className="nav flex-column">
+              <li className="nav-item">
+                <a href="#!" className="nav-link px-0 text-black">
+                  Houses
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="#!" className="nav-link px-0 text-black">
+                  Apartments
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="#!" className="nav-link px-0 text-black">
+                  Land
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="#!" className="nav-link px-0 text-black">
+                  Commercial
+                </a>
+              </li>
+            </ul>
           </div>
-        </section>
 
-        <section className="">
-          <div className="container text-center text-md-start mt-5">
-            <div className="row mt-3">
-              <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                <h6 className="text-uppercase fw-bold">Company name</h6>
-                <p>
-                  Here you can use rows and columns to organize your footer
-                  content. Lorem ipsum dolor sit amet, consectetur adipisicing
-                  elit.
-                </p>
-              </div>
-              <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                <h6 className="text-uppercase fw-bold">Products</h6>
+          <div className="col-lg-3 col-md-6">
+            <h6 className="nav-link mb-3">Quick Links</h6>
+            <ul className="nav flex-column">
+              <li className="nav-item">
+                <a href="/search" className="nav-link px-0 text-black">
+                  Search Properties
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="/favorites" className="nav-link px-0 text-black">
+                  My Favorites
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="/agents" className="nav-link px-0 text-black">
+                  Our Agents
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="/contact" className="nav-link px-0 text-black">
+                  Contact Us
+                </a>
+              </li>
+            </ul>
+          </div>
 
-                <p>
-                  <a href="#!" className="text-dark">
-                    MDBootstrap
-                  </a>
-                </p>
-                <p>
-                  <a href="#!" className="text-dark">
-                    MDWordPress
-                  </a>
-                </p>
-                <p>
-                  <a href="#!" className="text-dark">
-                    BrandFlow
-                  </a>
-                </p>
-                <p>
-                  <a href="#!" className="text-dark">
-                    Bootstrap Angular
-                  </a>
-                </p>
-              </div>
-              <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                <h6 className="text-uppercase fw-bold">Useful links</h6>
-
-                <p>
-                  <a href="#!" className="text-dark">
-                    Your Account
-                  </a>
-                </p>
-                <p>
-                  <a href="#!" className="text-dark">
-                    Become an Affiliate
-                  </a>
-                </p>
-                <p>
-                  <a href="#!" className="text-dark">
-                    Shipping Rates
-                  </a>
-                </p>
-                <p>
-                  <a href="#!" className="text-dark">
-                    Help
-                  </a>
-                </p>
-              </div>
-              <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                <h6 className="text-uppercase fw-bold">Contact</h6>
-
-                <p>
-                  <FontAwesomeIcon icon={faHome} className="me-2" /> New York,
-                  NY 10012, US
-                </p>
-                <p>
-                  <FontAwesomeIcon icon={faEnvelope} className="me-2" />{" "}
-                  info@example.com
-                </p>
-                <p>
-                  <FontAwesomeIcon icon={faPhone} className="me-2" /> + 01 234
-                  567 88
-                </p>
-                <p>
-                  <FontAwesomeIcon icon={faPrint} className="me-2" /> + 01 234
-                  567 89
-                </p>
-              </div>
+          <div className="col-lg-3 col-md-6">
+            <h6 className="nav-link mb-3">Contact</h6>
+            <div className="text-muted">
+              <p>
+                <FontAwesomeIcon icon={faHome} className="me-2" />
+                123 Property Lane, Real Estate City
+              </p>
+              <p>
+                <FontAwesomeIcon icon={faEnvelope} className="me-2" />
+                contact@estateagent.com
+              </p>
+              <p>
+                <FontAwesomeIcon icon={faPhone} className="me-2" />
+                (555) 123-4567
+              </p>
+              <p>
+                <FontAwesomeIcon icon={faClock} className="me-2" />
+                Mon-Fri: 9:00 AM - 6:00 PM
+              </p>
             </div>
           </div>
-        </section>
-      </footer>
-    </div>
+        </div>
+
+        <hr className="my-4" />
+
+        <div className="row align-items-center">
+          <div className="col-md-8 text-muted">
+            © {new Date().getFullYear()} Estate Agent. All rights reserved.
+          </div>
+          <div className="col-md-4">
+            <ul className="nav justify-content-end">
+              <li className="nav-item">
+                <a href="https://facebook.com" className="nav-link text-muted">
+                  <FontAwesomeIcon icon={faFacebookF} />
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="https://twitter.com" className="nav-link text-muted">
+                  <FontAwesomeIcon icon={faTwitter} />
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="https://instagram.com" className="nav-link text-muted">
+                  <FontAwesomeIcon icon={faInstagram} />
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="https://linkedin.com" className="nav-link text-muted">
+                  <FontAwesomeIcon icon={faLinkedin} />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
   );
 }
 
