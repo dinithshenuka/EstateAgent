@@ -8,6 +8,8 @@ import PropertyPage from "./routes/PropertyPage";
 import FavoritesPage from "./routes/FavoritesPage";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import PropertyProvider from "./context/PropertyContext";
+import AboutPage from "./routes/AboutPage";
+import ContactPage from "./routes/ContactPage";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
           <Route path="/search" element={<SearchPage />} />
           <Route path="/property/:id" element={<PropertyPage />} />
           <Route path="/favorites" element={<FavoritesPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Routes>
         <Footer />
       </Router>
