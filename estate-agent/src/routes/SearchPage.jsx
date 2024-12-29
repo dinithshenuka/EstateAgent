@@ -69,7 +69,7 @@ const SearchPage = () => {
   return (
     <DragDropContext onDragEnd={onDragEnd}>
       <div className="container mt-4">
-        <h1 className="text-warning text-center mb-4">Search Properties</h1>
+        <h1 className="text-center mb-4">Search Properties</h1>
 
         <SearchForm
           filters={filters}

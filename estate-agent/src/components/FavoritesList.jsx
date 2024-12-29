@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
 import { PropertyContext } from "../context/PropertyContext";
 import { Draggable } from "@hello-pangea/dnd";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const FavoritesList = () => {
-  const { favorites, removeFromFavorites, clearFavorites } =
+  const { favorites, removeFromFavorites, clearFavorites, error } =
     useContext(PropertyContext);
 
   return (
@@ -12,16 +14,25 @@ const FavoritesList = () => {
         <h5 className="mb-0">Favorites ({favorites.length})</h5>
         {favorites.length > 0 && (
           <button
-            className="btn btn-sm btn-outline-dark"
+            className="btn btn-sm btn-outline-dark d-flex align-items-center gap-2"
             onClick={clearFavorites}
           >
+            <FontAwesomeIcon icon={faTrash} />
             Clear All
           </button>
         )}
       </div>
       <div className="card-body">
+        {error && (
+          <div className="alert alert-danger" role="alert">
+            {error}
+          </div>
+        )}
         {favorites.length === 0 ? (
-          <p className="text-muted">No favorites yet</p>
+          <p className="text-muted text-center py-3">
+            No favorites yet. Drag properties here or click the heart icon to
+            add.
+          </p>
         ) : (
           favorites.map((property, index) => (
             <Draggable
@@ -29,12 +40,18 @@ const FavoritesList = () => {
               draggableId={property.id}
               index={index}
             >
-              {(provided) => (
+              {(provided, snapshot) => (
                 <div
                   ref={provided.innerRef}
                   {...provided.draggableProps}
                   {...provided.dragHandleProps}
-                  className="d-flex align-items-center mb-2 p-2 border-bottom"
+                  className={`d-flex align-items-center mb-2 p-2 border rounded ${
+                    snapshot.isDragging ? "bg-light shadow-sm" : ""
+                  }`}
+                  style={{
+                    ...provided.draggableProps.style,
+                    transition: "all 0.2s ease",
+                  }}
                 >
                   <img
                     src={property.picture}
@@ -54,10 +71,11 @@ const FavoritesList = () => {
                     </small>
                   </div>
                   <button
-                    className="btn btn-sm btn-outline-danger"
+                    className="btn btn-sm btn-outline-danger ms-2"
                     onClick={() => removeFromFavorites(property.id)}
+                    title="Remove from favorites"
                   >
-                    <i className="fas fa-times"></i>
+                    <FontAwesomeIcon icon={faTimes} />
                   </button>
                 </div>
               )}
