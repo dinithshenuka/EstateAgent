@@ -10,27 +10,7 @@ body {
   height: 60vh !important;
 }
 
-/* nav bar */
-@media (min-width: 992px) {
-  .navbar .navbar-collapse {
-    display: flex !important;
-    flex-basis: auto;
-  }
-
-  .navbar-nav.mx-auto {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  /* for right menu overlap */
-  .navbar-nav.ms-auto {
-    margin-left: auto !important;
-  }
-}
-
 /* hover effects */
-
 .navbar .nav-link:hover {
   color: var(--bs-warning) !important;
   transition: color 0.3s ease;
