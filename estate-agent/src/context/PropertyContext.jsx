@@ -79,14 +79,6 @@ export const PropertyProvider = ({ children }) => {
 
   return (
     <PropertyContext.Provider value={value}>
-      {error && (
-        <div
-          className="alert alert-danger position-fixed top-0 end-0 m-3"
-          role="alert"
-        >
-          {error}
-        </div>
-      )}
       {children}
     </PropertyContext.Provider>
   );

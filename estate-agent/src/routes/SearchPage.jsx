@@ -5,6 +5,7 @@ import { DragDropContext, Draggable, Droppable } from "@hello-pangea/dnd";
 import FavoritesList from "../components/FavoritesList";
 import SearchForm from "../components/SearchForm";
 import RemoveZone from "../components/RemoveZone";
+import PropertyCard from "../components/PropertyCard";
 
 const SearchPage = () => {
   const { properties, addToFavorites, removeFromFavorites } =
@@ -49,7 +50,6 @@ const SearchPage = () => {
   const onDragEnd = (result) => {
     const { source, destination, draggableId } = result;
 
-    // Handle removing from favorites
     if (!destination || destination.droppableId === "removeZone") {
       if (source.droppableId === "favoritesList") {
         removeFromFavorites(draggableId);
@@ -57,7 +57,6 @@ const SearchPage = () => {
       return;
     }
 
-    // Handle adding to favorites
     if (destination.droppableId === "favoritesList") {
       const property = filteredResults.find((p) => p.id === draggableId);
       if (property) {
@@ -94,55 +93,18 @@ const SearchPage = () => {
                         index={index}
                       >
                         {(provided) => (
-                          <div
-                            ref={provided.innerRef}
-                            {...provided.draggableProps}
-                            {...provided.dragHandleProps}
-                            className="col-md-6 mb-4"
-                          >
-                            <div className="card h-100 shadow-sm">
-                              <img
-                                src={property.picture}
-                                className="card-img-top"
-                                alt={property.name}
-                                style={{ height: "200px", objectFit: "cover" }}
-                              />
-                              <div className="card-body">
-                                <div className="d-flex justify-content-between align-items-center mb-2">
-                                  <h5 className="card-title mb-0">
-                                    {property.name}
-                                  </h5>
-                                  <button
-                                    className="btn btn-sm btn-outline-warning"
-                                    onClick={() => addToFavorites(property)}
-                                  >
-                                    <i className="fas fa-heart"></i>
-                                  </button>
-                                </div>
-                                <p className="card-text">
-                                  <small className="text-muted">
-                                    {property.type} • {property.bedrooms}{" "}
-                                    bedrooms
-                                  </small>
-                                </p>
-                                <p className="card-text fw-bold">
-                                  {property.currency}{" "}
-                                  {property.price.toLocaleString()}
-                                </p>
-                                <p className="card-text">
-                                  <small className="text-muted">
-                                    {property.location} ({property.postalCode})
-                                  </small>
-                                </p>
-                                <Link
-                                  to={`/property/${property.id}`}
-                                  className="btn btn-warning"
-                                >
-                                  View Details
-                                </Link>
-                              </div>
-                            </div>
-                          </div>
+                          <PropertyCard
+                            property={property}
+                            isFavorite={false}
+                            onAction={() => addToFavorites(property)}
+                            actionIcon="fa-heart"
+                            isDraggable={true}
+                            dragHandleProps={{
+                              ref: provided.innerRef,
+                              ...provided.draggableProps,
+                              ...provided.dragHandleProps,
+                            }}
+                          />
                         )}
                       </Draggable>
                     ))
