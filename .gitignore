@@ -1,6 +1,10 @@
-*DS_Store
+# Ignore Mac system files
+.DS_Store
 
-# Environment variables
+# Ignore environment variables
 .env
 .env.local
 .env.*.local
+
+# Ignore build directories
+/dist
