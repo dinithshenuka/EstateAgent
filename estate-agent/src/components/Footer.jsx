@@ -35,22 +35,22 @@ function Footer() {
             <h5 className="mb-3 text-center text-sm-start">Property Types</h5>
             <ul className="list-unstyled text-center text-sm-start">
               <li className="mb-2">
-                <Link className="nav-link" to="/properties/houses">
+                <Link className="nav-link" to="/search">
                   Houses
                 </Link>
               </li>
               <li className="mb-2">
-                <Link className="nav-link" to="/properties/apartments">
+                <Link className="nav-link" to="/search">
                   Apartments
                 </Link>
               </li>
               <li className="mb-2">
-                <Link className="nav-link" to="/properties/land">
+                <Link className="nav-link" to="/search">
                   Land
                 </Link>
               </li>
               <li className="mb-2">
-                <Link className="nav-link" to="/properties/commercial">
+                <Link className="nav-link" to="/search">
                   Commercial
                 </Link>
               </li>
@@ -68,7 +68,7 @@ function Footer() {
               </li>
               <li className="mb-2">
                 <Link className="nav-link" to="/favorites">
-                  My Favorites
+                  Favorites
                 </Link>
               </li>
               <li className="mb-2">
