@@ -79,12 +79,12 @@
       "postalCode": "11000",
       "picture": "/images/f1/f1p1.png",
       "gallery": [
-        "/images/f1/f2p1.png",
-        "/images/f1/f2p2.png",
-        "/images/f1/f2p3.png",
-        "/images/f1/f2p4.png",
-        "/images/f1/f2p5.png",
-        "/images/f1/f2p6.png"
+        "/images/f1/f1p1.png",
+        "/images/f1/f1p2.png",
+        "/images/f1/f1p3.png",
+        "/images/f1/f1p4.png",
+        "/images/f1/f1p5.png",
+        "/images/f1/fp6.png"
       ],
       "flloorPlan": ["/images/f1/f1f1.png"],
       "added": {
