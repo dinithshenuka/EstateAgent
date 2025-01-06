@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faHeart, faBars } from "@fortawesome/free-solid-svg-icons";
 
 function Navbar() {
+  // for mobile and tab nav
   const [isNavCollapsed, setIsNavCollapsed] = useState(true);
 
   const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
@@ -54,6 +55,8 @@ function Navbar() {
               </Link>
             </li>
           </ul>
+
+          {/* Search and Favorites */}
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
               <Link className="nav-link" to="/search">

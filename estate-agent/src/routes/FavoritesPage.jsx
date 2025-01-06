@@ -7,9 +7,11 @@ import RemoveZone from "../components/RemoveZone";
 function FavoritesPage() {
   const { favorites, removeFromFavorites } = useContext(PropertyContext);
 
+  // end of drag
   const onDragEnd = (result) => {
     const { destination, draggableId } = result;
 
+    // remove from fav
     if (!destination || destination.droppableId === "removeZone") {
       removeFromFavorites(draggableId);
     }
@@ -29,11 +31,13 @@ function FavoritesPage() {
                   {...provided.droppableProps}
                   className="row"
                 >
+                  {/* if no favorites */}
                   {favorites.length === 0 ? (
                     <div className="col-12 text-center">
                       <p className="text-muted">No favorite properties yet.</p>
                     </div>
                   ) : (
+                    // property card
                     favorites.map((property, index) => (
                       <Draggable
                         key={property.id}
