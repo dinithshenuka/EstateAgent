@@ -14,28 +14,33 @@ const PropertyPage = () => {
   const { properties, addToFavorites } = useContext(PropertyContext);
   const [mainImage, setMainImage] = useState(0);
 
+  // Load Google Maps
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
   });
 
+  // property by id
   const property = properties.find((p) => p.id === id);
 
   if (!property) {
     return <div className="text-center py-5">Property not found</div>;
   }
 
+  // Map container style
   const mapContainerStyle = {
     width: "100%",
     height: "clamp(300px, 50vw, 400px)",
     borderRadius: "8px",
   };
 
+  // Image Gallery
   const galleryImages = property.gallery.map((img) => ({
     original: img,
     thumbnail: img,
     originalHeight: "auto",
   }));
 
+  // Property location for Google Maps
   const propertyLocation = {
     lat: property.coordinates.lat,
     lng: property.coordinates.lng,
@@ -80,7 +85,7 @@ const PropertyPage = () => {
         </div>
       </div>
 
-      {/* Tabbed Content */}
+      {/* Tabs */}
       <div className="row mt-5">
         <div className="col-12">
           <Tabs>

@@ -4,6 +4,7 @@ import DatePicker from "react-datepicker";
 import { TextField } from "@mui/material";
 
 const SearchForm = ({ filters, setFilters, onSearch }) => {
+  // dropdown options
   const typeOptions = [
     { value: "", label: "Any Type" },
     { value: "House", label: "House" },
@@ -14,6 +15,7 @@ const SearchForm = ({ filters, setFilters, onSearch }) => {
     <div className="card p-3 mb-4">
       <h5 className="card-title mb-3">Search Filters</h5>
       <div className="row">
+        {/* property type */}
         <div className="col-md-2">
           <div className="mb-3">
             <label className="form-label">Property Type</label>
@@ -30,6 +32,7 @@ const SearchForm = ({ filters, setFilters, onSearch }) => {
           </div>
         </div>
 
+        {/* price range */}
         <div className="col-md-4">
           <div className="mb-3">
             <label className="form-label">Price Range</label>
@@ -58,6 +61,7 @@ const SearchForm = ({ filters, setFilters, onSearch }) => {
           </div>
         </div>
 
+        {/* bedrooms */}
         <div className="col-md-2">
           <div className="mb-3">
             <label className="form-label">Bedrooms</label>
@@ -86,6 +90,7 @@ const SearchForm = ({ filters, setFilters, onSearch }) => {
           </div>
         </div>
 
+        {/* date added */}
         <div className="col-md-2">
           <div className="mb-3">
             <label className="form-label">Date Added</label>
@@ -112,6 +117,7 @@ const SearchForm = ({ filters, setFilters, onSearch }) => {
           </div>
         </div>
 
+        {/* postal code */}
         <div className="col-md-2">
           <div className="mb-3">
             <label className="form-label">Postal Code</label>

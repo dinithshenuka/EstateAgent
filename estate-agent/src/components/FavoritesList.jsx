@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const FavoritesList = () => {
+  // from PropertyContext
   const { favorites, removeFromFavorites, clearFavorites, error } =
     useContext(PropertyContext);
 
@@ -22,6 +23,8 @@ const FavoritesList = () => {
           </button>
         )}
       </div>
+
+      {/* if error */}
       <div className="card-body">
         {error && (
           <div className="alert alert-danger" role="alert">
@@ -34,6 +37,7 @@ const FavoritesList = () => {
             add.
           </p>
         ) : (
+          // property card
           favorites.map((property, index) => (
             <Draggable
               key={property.id}

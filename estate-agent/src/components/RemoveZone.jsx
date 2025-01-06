@@ -3,6 +3,7 @@ import { Droppable } from "@hello-pangea/dnd";
 
 const RemoveZone = () => {
   return (
+    // Droppable component
     <Droppable droppableId="removeZone">
       {(provided, snapshot) => (
         <div
@@ -11,6 +12,7 @@ const RemoveZone = () => {
           className={`card mt-3 text-center ${
             snapshot.isDraggingOver ? "bg-danger" : "bg-light"
           }`}
+          // styles
           style={{
             minHeight: "100px",
             transition: "all 0.3s",
