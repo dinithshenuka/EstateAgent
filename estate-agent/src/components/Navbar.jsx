@@ -11,14 +11,12 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
       <div className="container">
-        {/* Brand */}
         <Link className="navbar-brand fw-bold" to="/">
           Estate Agent
         </Link>
 
-        {/* Toggle Button */}
         <button
-          className="navbar-toggler border-0"
+          className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
@@ -30,48 +28,41 @@ function Navbar() {
           <FontAwesomeIcon icon={faBars} />
         </button>
 
-        {/* Navigation Items */}
         <div
           className={`${isNavCollapsed ? "collapse" : ""} navbar-collapse`}
           id="navbarNav"
         >
-          {/* Center Menu */}
-          <ul className="navbar-nav mx-auto">
-            <li className="nav-item px-2">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item">
               <Link className="nav-link" to="/">
                 Home
               </Link>
             </li>
-            <li className="nav-item px-2">
+            <li className="nav-item">
               <Link className="nav-link" to="/agents">
                 Agents
               </Link>
             </li>
-            <li className="nav-item px-2">
+            <li className="nav-item">
               <Link className="nav-link" to="/about">
                 About
               </Link>
             </li>
-            <li className="nav-item px-2">
+            <li className="nav-item">
               <Link className="nav-link" to="/contact">
                 Contact Us
               </Link>
             </li>
           </ul>
-
-          {/* Right Menu */}
           <ul className="navbar-nav ms-auto">
-            <li className="nav-item px-2">
-              <Link className="nav-link d-flex align-items-center" to="/search">
+            <li className="nav-item">
+              <Link className="nav-link" to="/search">
                 <FontAwesomeIcon icon={faSearch} className="me-2" />
                 Search
               </Link>
             </li>
-            <li className="nav-item px-2">
-              <Link
-                className="nav-link d-flex align-items-center"
-                to="/favorites"
-              >
+            <li className="nav-item">
+              <Link className="nav-link" to="/favorites">
                 <FontAwesomeIcon icon={faHeart} className="me-2" />
                 Favorites
               </Link>
