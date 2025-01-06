@@ -11,12 +11,14 @@ const PropertyCard = ({
 }) => {
   const cardContent = (
     <div className="card h-100 shadow-sm">
+      {/* proprtyy img */}
       <img
         src={property.picture}
         className="card-img-top"
         alt={property.name}
         style={{ height: "200px", objectFit: "cover" }}
       />
+
       <div className="card-body">
         <div className="d-flex justify-content-between align-items-center mb-2">
           <h5 className="card-title mb-0">{property.name}</h5>
@@ -34,6 +36,7 @@ const PropertyCard = ({
             {property.type} • {property.bedrooms} bedrooms
           </small>
         </p>
+
         <p className="card-text fw-bold">
           {property.currency} {property.price.toLocaleString()}
         </p>
@@ -42,6 +45,8 @@ const PropertyCard = ({
             {property.location} ({property.postalCode})
           </small>
         </p>
+
+        {/* to property page */}
         <Link to={`/property/${property.id}`} className="btn btn-warning">
           View Details
         </Link>
@@ -49,6 +54,7 @@ const PropertyCard = ({
     </div>
   );
 
+  // for draggable
   if (isDraggable) {
     return (
       <div {...dragHandleProps} className="col-md-6 mb-4">

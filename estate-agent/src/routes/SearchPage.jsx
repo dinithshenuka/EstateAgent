@@ -10,6 +10,8 @@ import PropertyCard from "../components/PropertyCard";
 const SearchPage = () => {
   const { properties, addToFavorites, removeFromFavorites } =
     useContext(PropertyContext);
+
+  // hold search filters
   const [filters, setFilters] = useState({
     type: "",
     minPrice: "",
@@ -22,6 +24,7 @@ const SearchPage = () => {
   });
   const [filteredResults, setFilteredResults] = useState(properties);
 
+  // filter properties
   const handleSearch = () => {
     const results = properties.filter((property) => {
       return (
@@ -50,6 +53,7 @@ const SearchPage = () => {
   const onDragEnd = (result) => {
     const { source, destination, draggableId } = result;
 
+    // remove from fav
     if (!destination || destination.droppableId === "removeZone") {
       if (source.droppableId === "favoritesList") {
         removeFromFavorites(draggableId);
@@ -57,6 +61,7 @@ const SearchPage = () => {
       return;
     }
 
+    // add to fav
     if (destination.droppableId === "favoritesList") {
       const property = filteredResults.find((p) => p.id === draggableId);
       if (property) {
@@ -85,6 +90,7 @@ const SearchPage = () => {
                   ref={provided.innerRef}
                   className="row"
                 >
+                  {/* filterd results */}
                   {filteredResults.length > 0 ? (
                     filteredResults.map((property, index) => (
                       <Draggable

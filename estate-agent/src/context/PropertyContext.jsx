@@ -5,6 +5,8 @@ export const PropertyContext = createContext();
 
 export const PropertyProvider = ({ children }) => {
   const [properties] = useState(propertiesData.properties);
+
+  // from localStorage
   const [favorites, setFavorites] = useState(() => {
     try {
       const savedFavorites = localStorage.getItem("favorites");
@@ -14,8 +16,11 @@ export const PropertyProvider = ({ children }) => {
       return [];
     }
   });
+
+  // hold error
   const [error, setError] = useState(null);
 
+  // save fav to localStorage
   useEffect(() => {
     try {
       localStorage.setItem("favorites", JSON.stringify(favorites));
@@ -25,6 +30,7 @@ export const PropertyProvider = ({ children }) => {
     }
   }, [favorites]);
 
+  // add to fav
   const addToFavorites = (property) => {
     try {
       if (favorites.find((fav) => fav.id === property.id)) {
@@ -41,6 +47,7 @@ export const PropertyProvider = ({ children }) => {
     }
   };
 
+  // remove from fav
   const removeFromFavorites = (propertyId) => {
     try {
       setFavorites(favorites.filter((fav) => fav.id !== propertyId));
@@ -53,6 +60,7 @@ export const PropertyProvider = ({ children }) => {
     }
   };
 
+  // clear all fav
   const clearFavorites = () => {
     try {
       if (window.confirm("Are you sure you want to clear all favorites?")) {
@@ -68,6 +76,7 @@ export const PropertyProvider = ({ children }) => {
     }
   };
 
+  // context value
   const value = {
     properties,
     favorites,
