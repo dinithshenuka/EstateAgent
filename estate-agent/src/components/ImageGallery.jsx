@@ -4,8 +4,8 @@ import ImageGallery from "react-image-gallery";
 
 const PropertyGallery = ({ images }) => {
   const galleryItems = images.map((image) => ({
-    original: image.replace(/\.png$/, ".webp"),
-    thumbnail: image.replace(/\.png$/, ".webp"),
+    original: image,
+    thumbnail: image,
     originalHeight: 500,
     thumbnailHeight: 80,
   }));
