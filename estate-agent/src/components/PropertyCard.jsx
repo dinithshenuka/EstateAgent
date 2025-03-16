@@ -13,7 +13,7 @@ const PropertyCard = ({
     <div className="card h-100 shadow-sm">
       {/* proprtyy img */}
       <img
-        src={property.picture}
+        src={property.picture.replace(/\.png$/, ".webp")}
         className="card-img-top"
         alt={property.name}
         style={{ height: "200px", objectFit: "cover" }}

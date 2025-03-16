@@ -35,8 +35,8 @@ const PropertyPage = () => {
 
   // Image Gallery
   const galleryImages = property.gallery.map((img) => ({
-    original: img,
-    thumbnail: img,
+    original: img.replace(/\.png$/, ".webp"),
+    thumbnail: img.replace(/\.png$/, ".webp"),
     originalHeight: "auto",
   }));
 
@@ -113,7 +113,7 @@ const PropertyPage = () => {
                   {property.flloorPlan?.map((plan, index) => (
                     <div key={index} className="col-12 col-md-6">
                       <img
-                        src={plan}
+                        src={plan.replace(/\.png$/, ".webp")}
                         alt={`Floor plan ${index + 1}`}
                         className="img-fluid rounded shadow"
                       />
