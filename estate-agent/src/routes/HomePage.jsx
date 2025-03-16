@@ -27,7 +27,7 @@ const HomePage = () => {
       </div>
 
       {/* Feature Highlights Section */}
-      <div className="mt-5">
+      <div className="container mt-5">
         <h2>Why Choose Us?</h2>
         <div className="row mt-4">
           <div className="col-md-4">

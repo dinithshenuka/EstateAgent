@@ -122,7 +122,21 @@ function Footer() {
         <div className="row">
           <div className="col-12 col-sm-6 text-center text-sm-start mb-3 mb-sm-0">
             <span className="text-muted">
-              © {new Date().getFullYear()} Estate Agent. All rights reserved.
+              Dinith Perera | CS Undergraduate | IIT
+              <br />
+              5COSC026W Advanced Client-Side Web Development (2024/25)
+              <br />
+              University of Westminster
+              <br />
+              {/* view the cw specification pdf */}
+              <a
+                className="text-muted"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="/5COSC026W-CW-24-25.pdf"
+              >
+                View the CW Specification PDF
+              </a>
             </span>
           </div>
           <div className="col-12 col-sm-6">
