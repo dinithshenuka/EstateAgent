@@ -15,14 +15,14 @@
         "lng": 79.9696
       },
       "postalCode": "10115",
-      "picture": "/images/h1/h1p1.png",
+      "picture": "/images/h1/h1p1.webp",
       "gallery": [
-        "/images/h1/h1p1.png",
-        "/images/h1/h1p2.png",
-        "/images/h1/h1p3.png",
-        "/images/h1/h1p4.png"
+        "/images/h1/h1p1.webp",
+        "/images/h1/h1p2.webp",
+        "/images/h1/h1p3.webp",
+        "/images/h1/h1p4.webp"
       ],
-      "flloorPlan": ["/images/h1/h1f1.png"],
+      "flloorPlan": ["/images/h1/h1f1.webp"],
       "added": {
         "day": 23,
         "month": "December",
@@ -44,18 +44,18 @@
         "lng": 80.7333
       },
       "postalCode": "20400",
-      "picture": "/images/h2/h2p1.png",
+      "picture": "/images/h2/h2p1.webp",
       "gallery": [
-        "/images/h2/h2p1.png",
-        "/images/h2/h2p2.png",
-        "/images/h2/h2p3.png",
-        "/images/h2/h2p4.png",
-        "/images/h2/h2p5.png",
-        "/images/h2/h2p6.png",
-        "/images/h2/h2p7.png",
-        "/images/h2/h2p8.png"
+        "/images/h2/h2p1.webp",
+        "/images/h2/h2p2.webp",
+        "/images/h2/h2p3.webp",
+        "/images/h2/h2p4.webp",
+        "/images/h2/h2p5.webp",
+        "/images/h2/h2p6.webp",
+        "/images/h2/h2p7.webp",
+        "/images/h2/h2p8.webp"
       ],
-      "flloorPlan": ["/images/h2/h2f1.png", "/images/h2/h2f2.png"],
+      "flloorPlan": ["/images/h2/h2f1.webp", "/images/h2/h2f2.webp"],
       "added": {
         "day": 13,
         "month": "April",
@@ -77,16 +77,16 @@
         "lng": 80.0083
       },
       "postalCode": "11000",
-      "picture": "/images/f1/f1p1.png",
+      "picture": "/images/f1/f1p1.webp",
       "gallery": [
-        "/images/f1/f1p1.png",
-        "/images/f1/f1p2.png",
-        "/images/f1/f1p3.png",
-        "/images/f1/f1p4.png",
-        "/images/f1/f1p5.png",
-        "/images/f1/f1p6.png"
+        "/images/f1/f1p1.webp",
+        "/images/f1/f1p2.webp",
+        "/images/f1/f1p3.webp",
+        "/images/f1/f1p4.webp",
+        "/images/f1/f1p5.webp",
+        "/images/f1/f1p6.webp"
       ],
-      "flloorPlan": ["/images/f1/f1f1.png"],
+      "flloorPlan": ["/images/f1/f1f1.webp"],
       "added": {
         "day": 23,
         "month": "August",
@@ -108,16 +108,16 @@
         "lng": 79.9626
       },
       "postalCode": "10300",
-      "picture": "/images/h3/h3p1.png",
+      "picture": "/images/h3/h3p1.webp",
       "gallery": [
-        "/images/h3/h3p1.png",
-        "/images/h3/h3p2.png",
-        "/images/h3/h3p3.png",
-        "/images/h3/h3p4.png",
-        "/images/h3/h3p5.png",
-        "/images/h3/h3p6.png"
+      "/images/h3/h3p1.webp",
+      "/images/h3/h3p2.webp",
+      "/images/h3/h3p3.webp",
+      "/images/h3/h3p4.webp",
+      "/images/h3/h3p5.webp",
+      "/images/h3/h3p6.webp"
       ],
-      "flloorPlan": ["/images/h3/h3f1.png"],
+      "flloorPlan": ["/images/h3/h3f1.webp"],
       "added": {
         "day": 23,
         "month": "August",
@@ -139,19 +139,19 @@
         "lng": 80.6337
       },
       "postalCode": "20000",
-      "picture": "/images/f2/f2p1.png",
+      "picture": "/images/f2/f2p1.webp",
       "gallery": [
-        "/images/f2/f2p1.png",
-        "/images/f2/f2p2.png",
-        "/images/f2/f2p3.png",
-        "/images/f2/f2p4.png",
-        "/images/f2/f2p5.png"
+      "/images/f2/f2p1.webp",
+      "/images/f2/f2p2.webp",
+      "/images/f2/f2p3.webp",
+      "/images/f2/f2p4.webp",
+      "/images/f2/f2p5.webp"
       ],
       "flloorPlan": [
-        "/images/f2/f2f1.png",
-        "/images/f2/f2f2.png",
-        "/images/f2/f2f3.png",
-        "/images/f2/f2f4.png"
+      "/images/f2/f2f1.webp",
+      "/images/f2/f2f2.webp",
+      "/images/f2/f2f3.webp",
+      "/images/f2/f2f4.webp"
       ],
       "added": {
         "day": 23,
@@ -174,16 +174,16 @@
         "lng": 79.9482
       },
       "postalCode": "10116",
-      "picture": "/images/f3/f3p1.png",
+      "picture": "/images/f3/f3p1.webp",
       "gallery": [
-        "/images/f3/f3p1.png",
-        "/images/f3/f3p2.png",
-        "/images/f3/f3p3.png",
-        "/images/f3/f3p4.png",
-        "/images/f3/f3p5.png",
-        "/images/f3/f3p6.png"
+      "/images/f3/f3p1.webp",
+      "/images/f3/f3p2.webp",
+      "/images/f3/f3p3.webp",
+      "/images/f3/f3p4.webp",
+      "/images/f3/f3p5.webp",
+      "/images/f3/f3p6.webp"
       ],
-      "flloorPlan": ["/images/f3/f3f1.png"],
+      "flloorPlan": ["/images/f3/f3f1.webp"],
       "added": {
         "day": 13,
         "month": "August",
@@ -205,15 +205,15 @@
         "lng": 79.9126
       },
       "postalCode": "11204",
-      "picture": "/images/h4/h4p1.png",
+      "picture": "/images/h4/h4p1.webp",
       "gallery": [
-        "/images/h4/h4p2.png",
-        "/images/h4/h4p1.png",
-        "/images/h4/h4p3.png",
-        "/images/h4/h4p4.png",
-        "/images/h4/h4p5.png"
+      "/images/h4/h4p2.webp",
+      "/images/h4/h4p1.webp",
+      "/images/h4/h4p3.webp",
+      "/images/h4/h4p4.webp",
+      "/images/h4/h4p5.webp"
       ],
-      "flloorPlan": ["/images/h4/h4f1.png"],
+      "flloorPlan": ["/images/h4/h4f1.webp"],
       "added": {
         "day": 23,
         "month": "January",
@@ -235,14 +235,14 @@
         "lng": 79.9547
       },
       "postalCode": "11850",
-      "picture": "/images/h5/h5p1.png",
+      "picture": "/images/h5/h5p1.webp",
       "gallery": [
-        "/images/h5/h5p1.png",
-        "/images/h5/h5p2.png",
-        "/images/h5/h5p3.png",
-        "/images/h5/h5p4.png"
+      "/images/h5/h5p1.webp",
+      "/images/h5/h5p2.webp",
+      "/images/h5/h5p3.webp",
+      "/images/h5/h5p4.webp"
       ],
-      "flloorPlan": ["/images/h5/h5f1.png"],
+      "flloorPlan": ["/images/h5/h5f1.webp"],
       "added": {
         "day": 1,
         "month": "July",
